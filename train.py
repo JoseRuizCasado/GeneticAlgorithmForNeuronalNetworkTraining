@@ -41,7 +41,7 @@ def get_data():
     return n_classes, batch_size, input_shape, X_train, X_test, y_train, y_test
 
 
-def compile_model(network, n_classes=4, input_shape=20, genetic_flag=False):
+def compile_model(network, n_classes=4, input_shape=20, genetic_flag=False, ):
     """
     Compile sequential model with network hyperparameters.
     :param network: object with info about hyperparameters
@@ -65,7 +65,9 @@ def compile_model(network, n_classes=4, input_shape=20, genetic_flag=False):
         else:
             model.add(Dense(n_neurons, activation=activation))
 
-        model.add(Dropout(0.2))
+        # For training with genetic algorithm it is necessary yo avoid dropout layer
+        # because it haven't weights
+        # model.add(Dropout(0.2))
 
     # Output layer
     model.add(Dense(n_classes, activation='softmax'))

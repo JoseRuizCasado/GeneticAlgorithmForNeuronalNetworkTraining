@@ -32,7 +32,7 @@ def get_average_accuracy(population):
 def generate(generations, population, nn_param_choices, genetic_train=False):
     """
     Generate a network with the genetic algorithm.
-    :param generations: Number of times to evole the population
+    :param generations: Number of times to evolve the population
     :param population: Number of networks in each generation
     :param nn_param_choices: Parameter choices for networks
     :param genetic_train: flag to use or not genetic algorithm for training
@@ -74,7 +74,7 @@ def main():
                       'adadelta', 'adamax', 'nadam'],
     }
     print(f'***Evolving {generations} generations with population {population}***')
-    generate(generations=generations, population=population, nn_param_choices=nn_param_choices, genetic_train=True)
+    generate(generations=generations, population=population, nn_param_choices=nn_param_choices)
 
 
 if __name__ == '__main__':

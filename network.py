@@ -1,6 +1,5 @@
 import random
 from train import train_and_score
-from genetic_algorithm import genetic_train
 
 
 class Network:
@@ -41,10 +40,7 @@ class Network:
         :param genetic_train_flag: flag to use or not genetic algorithm for training
         """
         if self.accuracy == 0:
-            if genetic_train_flag:
-                self.accuracy = genetic_train(self.network, 20, 10)
-            else:
-                self.accuracy = train_and_score(self.network)
+            self.accuracy = train_and_score(self.network)
 
     def print_network(self):
         """
