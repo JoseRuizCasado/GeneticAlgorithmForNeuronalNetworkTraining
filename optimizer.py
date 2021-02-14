@@ -104,7 +104,7 @@ class Optimizer:
         # Get the networks we keep for the next generation
         retain_length = int(len(graded) * self.retain)
 
-        # The parents are every network we want to keep
+        # The parents are every network to keep
         parents = graded[:retain_length]
 
         # Randomly keep some of the refused

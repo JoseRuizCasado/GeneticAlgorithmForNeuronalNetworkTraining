@@ -22,9 +22,9 @@ class GeneticNeuralNetwork(Sequential):
         # If no weights provided randomly generate them
         if child_weights is None:
             # Layers are created and randomly generated
-            layer1 = Dense(16, input_dim=20, activation='relu')
-            layer2 = Dense(12, activation='relu')
-            layer3 = Dense(4, activation='softmax')
+            layer1 = Dense(16, input_dim=20, activation='relu', kernel_initializer='random_normal')
+            layer2 = Dense(12, activation='relu', kernel_initializer='random_normal')
+            layer3 = Dense(4, activation='softmax', kernel_initializer='random_normal')
             # Layers are added to the model
             self.add(layer1)
             self.add(layer2)
